@@ -1,0 +1,8 @@
+Develop a bus ticket booking system.
+● It should contain the user module with the Signup and Login Process.
+● Should contain admin and user profiles.
+● The admin has the privilege to add, update and delete the buses.
+● Refer to Redbus for examples.
+● The user can book the ticket of the bus for a particular date to travel.
+● The user should receive an error message when the tickets are full on the bus.
+● Backend APIs are enough. No front-end code is required.

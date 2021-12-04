@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-sections">
+        <form>
+            <legend><b>BUS  TRAVEL  MADE  SAFE  AND  EASY</b></legend>
+        </form>
+    </div>
+
+    <br>
+    <form class="form-inline my-2 my-lg-0">
+        <div class="form-group">
+            <input type="search" name="p" id="" class="form-control mr-sm-2" placeholder="From" aria-describedby="helpId">
+        </div>
+        <p>&emsp;</p>
+        <br>
+        <div class="form-group">
+            <input type="search" name="q" id="" class="form-control mr-sm-2" placeholder="To" aria-describedby="helpId">
+        </div>
+        <button class="btn btn-outline-danger my-2 my-sm-0" type='submit'>Search</button>
+    </form>
+    <br>
+    <br>
+    <div class="content-sections">
+        <form>
+            <legend><b>RECENT BOOKINGS</b></legend>
+        </form>
+    </div>
+    <br>
+        <table class="t">
+            <thead>
+            <tr>
+                <th scope="col">Busname</th>
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+                <th scope="col">Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                {% for post in buses %}
+                <tr>
+                    <th scope="row"><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.busname }}</a></th>
+                    <th>{{ post.startingpoint }}</th>
+                    <th>{{ post.destination }}</th>
+                    <th>{{ post.dateoftravel }}</th>
+                </tr>
+                {% endfor %}
+            </tr>
+            </tbody>
+        </table>
+    
+    
+{% endblock content %}
+

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST", action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Book Seat</legend>
+                <div class="form-group">
+                    {{ form.busname.label(class='form-control-label') }}
+                    {% if form.busname.errors %}
+                        {{ form.busname(class="form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.busname.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.busname(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+                
+                <div>
+                    {{ form.startingpoint.label(class='form-control-label') }}
+                    {% if form.startingpoint.errors %}
+                        {{ form.startingpoint(class="form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.startingpoint.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.startingpoint(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+                <div>
+                    {{ form.destination.label(class='form-control-label') }}
+                    {% if form.destination.errors %}
+                        {{ form.destination(class="form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.destination.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.destination(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+                <br>
+                <div>
+                    <form>
+                        {{ host.dateoftravel.label(class='datepicker') }}
+                        {{ host.hidden_tag() }}
+                    </form>
+                </div>
+                <div>
+                    <input type="date" id="date" name="date">
+                </div>
+            </fieldset>
+            <br>
+            <div class="form-group">
+                {{ form.submit(class='btn btn-outline-danger') }}
+            </div>
+        </form>
+    </div>
+    
+{% endblock content %}
