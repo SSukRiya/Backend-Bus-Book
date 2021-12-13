@@ -4,7 +4,6 @@ from Redbus import db, login, app, admin
 from flask_login import UserMixin, login_user, current_user, logout_user, login_required
 from flask_admin.contrib.sqla import ModelView
 from datetime import datetime
-from datetime import datetime
 from flask import request
 
 @login.user_loader
